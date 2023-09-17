@@ -1,20 +1,27 @@
-// First component program
-// Javascript program
-// for now it does not receive any arguments
-const App = ()=>{
-  const now = new Date();
-  const a = 10;
-  const b = 20;
+import './App.css';
 
-  console.log(a+b);
-  //  it can also execute or contain js code
-  // console.log("Hello from component app")
+const Hello = (props)=>{
+  console.log(props);
+  return(
+    <div>
+      <p>Hello {props.name}, your age is {props.age}</p>
+    </div>
+  )
+}
+
+const App = ()=>{
+
+  let inlineStyle = {
+    color:'white',
+    background:'red'
+  }
 
   // Returns HTML
   return (
   <div>
-    <p>Hello world, it is {now.toString()}</p>
-    <p> {a} + {b} = {a+b}</p>
+    <h1 style={{color:"white", background:"green"}}> Greetings</h1>
+    <Hello style={inlineStyle}name ="Daniel" age ="30" />
+    <Hello name ="Darwin" age ="28" />
   </div>
 )
 }
