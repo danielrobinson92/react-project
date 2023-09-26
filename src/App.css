@@ -1,10 +1,10 @@
 p{
-    color: azure;
-    background-color: aqua;
+    color: grey;
+    /* background-color: aqua; */
 }
 
 body{
-    background-image: linear-gradient(to right, blue, rgb(93, 93, 252));
+    background-image: linear-gradient(to right, rgb(2,101,231), rgb(93, 93, 252));
 }
 
 .flex{
@@ -13,16 +13,19 @@ body{
     justify-content: space-around;
     align-items: center;
     flex-flow: 75px;
-    height: 500px;
-    background-color: aqua;
+    height: 100%;
+    margin: 5%;
+    /* background-color: aqua; */
 }
 
 .box{
     /* padding: 10px 10px 10px 10px ; */
     background-color: white;
     border-radius: 10px;
+    margin: 10px;
+    justify-content: center;
 }
-.box >div{
+.box .plan_div{
     margin: 20px 40px 20px 0px;
 }
 
@@ -44,5 +47,35 @@ h2{
     text-align: center;
 }
 
-ul:first-child  li:before { content:"\2714\0020"; }  /* OR */
-ul:nth-child(2) li:before { content:"\x\0020"; }  /* OR */
+hr{
+    color: grey;
+    width: 90%;
+}
+
+ul:first-child  li:before { content:"\2714\0020"; }
+ul:nth-child(2) li:before { content:"\x\0020";}  
+
+ul:nth-child(2) li{
+    color: gray;
+}
+
+button{
+    padding: 5px 70px;
+    border-radius: 15px;
+    border: 0;
+    color: azure;
+    background-color: #4BA2FF;
+    cursor: pointer;
+}
+
+.box> div:nth-child(4){
+    text-align: center;
+    margin: 10px;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+.box:hover button{
+    background-color: rgb(2,101,231);
+}

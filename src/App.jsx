@@ -10,7 +10,7 @@ const price = (plan,price)=>{
 
 const free_plan = ()=>{
   return(
-  <div>
+  <div className='plan_div'>
     <ul style={{listStyleType:"none"}}>
       <li>Single User</li>
       <li>50GB Storage</li>
@@ -28,7 +28,7 @@ const free_plan = ()=>{
 
 const plus_plan = ()=>{
   return(
-  <div>
+  <div className='plan_div'>
     <ul style={{listStyleType:"none"}}>
       <li>Single User</li>
       <li>50GB Storage</li>
@@ -38,7 +38,7 @@ const plus_plan = ()=>{
       <li>Dedicated Phone Support</li>
       <li>Free Subdomain</li>
     </ul>
-    <ul style={{listStyleType:"none"}}>
+    <ul style={{listStyleType:"none"}} >
       <li>Monthly Status Reports</li>
     </ul>
   </div>
@@ -46,7 +46,7 @@ const plus_plan = ()=>{
 
 const pro_plan = ()=>{
   return(
-  <div>
+  <div className='plan_div'>
     <ul style={{listStyleType:"none"}}>
       <li>Single User</li>
       <li>50GB Storage</li>
@@ -60,7 +60,12 @@ const pro_plan = ()=>{
   </div>
 )}
 
-
+const button=()=>{
+  return (
+    <div>
+      <button>Button</button>
+    </div>
+  )}
 
 
 
@@ -71,15 +76,21 @@ const App = ()=>{
   <div id = 'flex' className='flex'>
       <div className='box'>
         {price('FREE',0)}
+        <hr/>
         {free_plan()}
+        {button()}
       </div>
     <div className='box'>
         {price('PLUS',9)}
+        <hr/>
         {plus_plan()}
+        {button()}
     </div>
     <div className='box'>
         {price('PRO',49)}
+        <hr/>
         {pro_plan()}
+        {button()}
     </div> 
   </div>
 )
