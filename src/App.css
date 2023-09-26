@@ -1,5 +1,48 @@
 p{
     color: azure;
     background-color: aqua;
-
 }
+
+body{
+    background-image: linear-gradient(to right, blue, rgb(93, 93, 252));
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: 75px;
+    height: 500px;
+    background-color: aqua;
+}
+
+.box{
+    /* padding: 10px 10px 10px 10px ; */
+    background-color: white;
+    border-radius: 10px;
+}
+.box >div{
+    margin: 20px 40px 20px 0px;
+}
+
+
+.plan{
+    font-size: x-small;
+    text-align: center;
+}
+
+ul{
+    margin: 0;
+}
+
+li{
+    margin: 10px 0;
+}
+
+h2{
+    text-align: center;
+}
+
+ul:first-child  li:before { content:"\2714\0020"; }  /* OR */
+ul:nth-child(2) li:before { content:"\x\0020"; }  /* OR */
