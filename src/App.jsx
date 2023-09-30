@@ -8,19 +8,8 @@ To create a counter, where the value is increased as a function of time or at th
 */
 
 import React, {useState} from "react";
-
-function Display({counter}){
-  console.log(counter);
-  return(
-   <div>{counter}</div> 
-  )
-}
-
-function Button({text,handleClick}){
-  return(
-    <button onClick={handleClick}>{text}</button>
-  )
-}
+import Button from './components/Button'
+import Display from './components/Display'
 
 
 function App() {
