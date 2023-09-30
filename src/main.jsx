@@ -12,4 +12,5 @@ const notes = [
     { id: 5, content: 'Props vs State', important: false}
 ]
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App notes={notes}/>);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);

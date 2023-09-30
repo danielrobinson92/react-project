@@ -1,23 +1,26 @@
+/*
+Hooks: 
+  -any functions that startts with "use" is called a hook.
+  -they are special functions that are only available while Reach is rendering
 
+To create a counter, where the value is increased as a function of time or at the click of the button
 
-function App(props) {
-  console.log(props);
+*/
 
-  let {notes} = props;
-  console.log(notes);
+import React, {useState} from "react";
+
+function App() {
+  const [counter, setCounter] = useState(0);
+  
+  setTimeout(()=>{
+    setCounter(counter+1);
+  },1000)
+  
+
 
   return (
-    <div>
-      <h1>Notes</h1>
-      <ul>
-        {
-          notes.map((note)=> {
-            return <li key={note.id}>{note.content}</li>
-          })
-        }
-      </ul>
-    </div>
+    <div>{counter}</div>
   )
 }
 
-export default App
+export default App;
