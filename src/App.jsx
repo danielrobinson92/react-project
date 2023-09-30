@@ -7,27 +7,39 @@ To create a counter, where the value is increased as a function of time or at th
 
 */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+
+function GrandChildComponent({parentData}){
+  console.log(`from grand child componenet :${parentData}`);
+
+  return(
+    <div>
+      <h3>Grand Child Component</h3>
+    </div>
+  )
+}
+
+
+
+function ChildComponent({parentData}){
+  console.log(`from Child Component ${parentData}`);
+  return (
+    <div>
+        <h1>Child Component</h1>
+        <GrandChildComponent parentData={parentData} />
+    </div>
+  )
+}
+
 
 
 function App() {
 
-  const [count,setCount] = useState(0);
-  
-  useEffect(()=>{
-    document.title = `Count: ${count}`;
-  },[count])
-
-  const handleIncrement =()=>{
-    setCount(count +1);
-  }
-
-  console.log(count);
-
+  const parentData = 'Hello from Parent';
   return(
     <div>
-      <h1>Document Title Change</h1>
-      <button onClick={handleIncrement}>Change Count</button>
+        <h1>Parent Component</h1>
+        <ChildComponent parentData={parentData} />;
     </div>
   )
 }
