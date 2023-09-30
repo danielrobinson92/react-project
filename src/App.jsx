@@ -7,32 +7,21 @@ To create a counter, where the value is increased as a function of time or at th
 
 */
 
-import React, {useState} from "react";
-import Button from './components/Button'
-import Display from './components/Display'
+import React, {useEffect, useState} from "react";
 
 
 function App() {
-  const [counter, setCounter] = useState(0);
+const [data, setData] = useState(null);  
 
-  const handleClick=()=>{
-    setCounter(counter+1);
-  }
-  const handleZero=()=>{
-    setCounter(0);
-  }
-  const handleMinus=()=>{
-  setCounter(counter-1);
-  }
-  
+useEffect(()=>{
+  fetch('https://jsonplaceholder.typicode.com/posts').then(response=>response.json())
+    .then(result=>setData(result));
+},[]);
+
+console.log(data);
 
   return (
-    <div>
-      <Display counter={counter}/>
-      <Button text='plus' handleClick = {handleClick}/>
-      <Button text='minus' handleClick = {handleMinus}/>
-      <Button text='zero' handleClick = {handleZero}/>
-    </div>
+    <div>App</div>
   )
 }
 
