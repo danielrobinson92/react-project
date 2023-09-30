@@ -9,10 +9,16 @@ To create a counter, where the value is increased as a function of time or at th
 
 import React, {useState} from "react";
 
-function Display(props){
-  console.log(props);
+function Display({counter}){
+  console.log(counter);
   return(
-   <div>{props.counter}</div> 
+   <div>{counter}</div> 
+  )
+}
+
+function Button({text,handleClick}){
+  return(
+    <button onClick={handleClick}>{text}</button>
   )
 }
 
@@ -27,16 +33,16 @@ function App() {
     setCounter(0);
   }
   const handleMinus=()=>{
-  setCounter(counter--);
+  setCounter(counter-1);
   }
   
 
   return (
     <div>
       <Display counter={counter}/>
-      <button onClick={handleClick}>Plus</button>
-      <button onClick={handleMinus}>Minus</button>
-      <button onClick={handleZero}>Zero</button>
+      <Button text='plus' handleClick = {handleClick}/>
+      <Button text='minus' handleClick = {handleMinus}/>
+      <Button text='zero' handleClick = {handleZero}/>
     </div>
   )
 }
