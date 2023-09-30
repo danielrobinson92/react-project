@@ -15,12 +15,20 @@ function App() {
   const handleClick=()=>{
     setCounter(counter+1);
   }
+  const handleZero=()=>{
+    setCounter(0);
+  }
+  const handleMinus=()=>{
+  setCounter(counter--);
+  }
   
 
   return (
     <div>
       <div>{counter}</div>
-      <button onClick={handleClick}>Trigger</button>
+      <button onClick={handleClick}>Plus</button>
+      <button onClick={handleMinus}>Minus</button>
+      <button onClick={handleZero}>Zero</button>
     </div>
   )
 }
