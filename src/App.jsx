@@ -1,21 +1,9 @@
-import React from 'react'
+import { Component } from "react";
 
-function Hello(props){
-  return(
-    <div>Hello, {props.name}!</div>
-
-  )
-
+class App extends Component{
+  render() {
+    return <div>Hello Guest!</div>
+  }
 }
 
-
-
-function App() {
-  return (
-    <div>
-      <Hello name = "Krish" />
-    </div>
-  )
-}
-
-export default App
+export default App;
