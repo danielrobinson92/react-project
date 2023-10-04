@@ -2,8 +2,8 @@ import { Component } from "react";
 
 class Hello extends Component{
   render(){
-    let {name} = this.props; 
-    return <div>Hello {name}!</div>
+    let {name, age} = this.props; 
+    return <div>Hello {name}!, your age is {age}</div>
   }
 }
 
@@ -11,7 +11,7 @@ class App extends Component{
   render() {
     return(
       <div>
-        <Hello name = "Daniel"/>
+        <Hello name = "Daniel" age = "25"/>
       </div>
     )
   }
